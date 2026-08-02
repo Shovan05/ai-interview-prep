@@ -239,6 +239,42 @@ $font-stack:     system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Robot
     }
 }
 
+// ── Selected File ─────────────────────────────────────────────────────────────
+.selected-file {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 0.75rem;
+    background-color: rgba($accent, 0.08);
+    border: 1px solid rgba($accent, 0.3);
+    border-radius: 0.5rem;
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        color: $accent;
+        flex-shrink: 0;
+    }
+
+    &__name {
+        flex: 1;
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: $text-primary;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-family: $font-stack;
+    }
+
+    &__check {
+        display: flex;
+        align-items: center;
+        color: $accent;
+        flex-shrink: 0;
+    }
+}
+
 // ── OR Divider ────────────────────────────────────────────────────────────────
 .or-divider {
     display: flex;
