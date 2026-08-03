@@ -6,10 +6,22 @@ const app = express()
 
 app.use(express.json())
 app.use(cookieParser())
+const allowedOrigins = [
+    "http://localhost:5173",
+    "https://ai-interview-preperation-guide.vercel.app",
+    "https://ai-interview-prep-mu-five.vercel.app"
+];
+
 app.use(cors({
-       origin: process.env.FRONTEND_URL,
-       credentials: true
-   }))
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
+    credentials: true
+}));
 
 /* require all the routes here */
 const authRouter = require("./routes/auth.routes")
