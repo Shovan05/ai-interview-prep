@@ -26,9 +26,16 @@ const Home = () => {
 
     if (loading) {
         return (
-            <main className='loading-screen'>
-                <h1>Loading your interview plan...</h1>
-            </main>
+        <main className="loading-screen">
+            <div className="loader"></div>
+
+            <h2>Preparing your AI Interview...</h2>
+
+            <p>
+                Please wait while we analyze your resume and generate
+                personalized interview questions.
+            </p>
+        </main>
         )
     }
 
